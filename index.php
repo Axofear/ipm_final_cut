@@ -1,0 +1,667 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPromind Media - Premier Digital Marketing & IT Solutions</title>
+    <meta name="description"
+        content="iPromind Media delivers cutting-edge digital marketing and IT services to transform your business. ISO 9001:2015 certified solutions for measurable growth.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="assets/img/green.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Typed.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/img/digital-world.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #0d9b6c;
+            transform: translateY(-2px);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            border-bottom-color: var(--primary);
+        }
+
+        .testimonial-card {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(37, 99, 235, 0.2);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .stats-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--primary);
+            transition: height 0.6s ease;
+        }
+
+        .stats-item:hover::before {
+            height: 100%;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        /* Typed.js Custom Styles */
+        .typed-text {
+            display: inline-block;
+        }
+
+        .typed-cursor {
+            display: inline-block;
+            color: #93c5fd;
+            font-size: 2.5rem;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .typing-container {
+            min-height: 220px;
+        }
+
+        @media (max-width: 768px) {
+            .typing-container {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/img/IPM.png" alt="iPromind Media Logo" class="h-14 w-auto">
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">iPromind Media</h1>
+                    <p class="text-xs text-gray-600 font-medium tracking-wide">ISO 9001:2015 CERTIFIED</p>
+                </div>
+            </div>
+            <nav class="hidden lg:flex space-x-8">
+                <a href="#services" class="nav-link text-gray-700 font-medium hover:text-blue-600">Services</a>
+
+
+                <a href="#footer" class="nav-link text-gray-700 font-medium hover:text-blue-600">About</a>
+                <a href="#contact" class="btn-primary text-white px-6 py-2 rounded-full font-medium">Get Quote</a>
+            </nav>
+
+            <!-- Add navigation button for mobile -->
+            <button id="mobileMenuButton" class="lg:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu lg:hidden bg-white shadow-md" id="mobileMenu">
+            <div class="container mx-auto px-6 py-3 flex flex-col space-y-4">
+                <a href="#services" class="text-gray-700 font-medium py-2 border-b border-gray-100">Services</a>
+                <a href="#footer" class="text-gray-700 font-medium py-2 border-b border-gray-100">About</a>
+                <a href="#contact"
+                    class="btn-primary text-white text-center px-6 py-3 rounded-full font-medium my-2">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white ">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mt-12">
+                    <form id="contactForm" class="bg-gray-50 p-8 rounded-xl shadow-md" action="submit_contact.php"
+                        method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email *</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                                    required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-gray-700 font-medium mb-2">Company</label>
+                                <input type="text" id="company" name="company"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Interested
+                                    In</label>
+                                <select id="service" name="service"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                    <option value="">Select a service</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="IT Services">IT Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Your Message *</label>
+                                <textarea id="message" name="message" rows="4"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary w-full mt-6 py-4 rounded-lg font-semibold">
+                            Send Message
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                        <div id="formMessage" class="mt-4 text-center min-h-[24px]"></div>
+
+                </div>
+                </form>
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 ml-12 mt-12">
+                    <span class="text-blue-600 font-semibold">CONTACT US</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-6">Let's Build Something Great</h2>
+                    <p class="text-gray-600 mb-8">Have a project in mind or questions about our services? Fill out the
+                        form and our team will get back to you within 24 hours.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Our Office</h4>
+                                <p class="text-gray-600 mt-1">Sikrabaid, Khatra, Bankura <br> West Bengal, PIN-722140,
+                                    India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Email Us</h4>
+                                <p class="text-gray-600 mt-1">info@ipromindmedia.com<br>support@ipromindmedia.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="font-semibold text-gray-800">Call Us</h4>
+                                <p class="text-gray-600 mt-1">+(91) 93390 94039<br>Mon-Sat, 9am-5pm EST</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Hero Section with Typed Animation -->
+    <section class="hero-section pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft typing-container">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span id="typed-heading" class="block"></span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-200">
+                        <span id="typed-subheading"></span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact"
+                            class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-center">Start Your
+                            Project</a>
+                        <a href="#services"
+                            class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-center hover:bg-white hover:text-blue-600 transition">Our
+                            Services</a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center animate__animated animate__fadeInRight">
+                    <img src="assets/img/Mobile Marketing-rafiki.svg" alt="Digital Marketing Illustration"
+                        class="w-full max-w-md floating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Logo Section -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-gray-500 mb-8">Trusted by innovative companies worldwide</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70">
+                <img src="assets/img/credilio-svg-logo.svg" alt="Client Logo"
+                    class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition">
+                <img src="assets/img/Paytm_Money_Logo.png" alt="Client Logo"
+                    class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition">
+                <img src="assets/img/MediBuddy-Official-Logo.png" alt="Client Logo"
+                    class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition">
+                <img src="assets/img/samco-mutual-fund-logo.png" alt="Client Logo"
+                    class！
+
+                    class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition">
+                <img src="assets/img/pngaaa.com-3569329.png" alt="Client Logo"
+                    class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Let's discuss how we can help you achieve your digital goals.
+                Schedule a free consultation with our experts today.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-full font-semibold">Get Started Now</a>
+                <a href="tel:+919339094039"
+                    class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-semibold">OUR SERVICES</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Comprehensive Digital Solutions</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 mt-4">We deliver end-to-end digital services tailored to your
+                    business objectives and growth targets.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Marketing</h3>
+                    <p class="text-gray-600 mb-4">Data-driven strategies to increase your online visibility, engagement,
+                        and conversions across all digital channels.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> SEO &
+                            Content Marketing</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Social
+                            Media Management</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> PPC
+                            Advertising</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development & Application</h3>
+                    <p class="text-gray-600 mb-4">Custom, responsive websites and web applications that deliver
+                        exceptional user experiences and drive results.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Custom Web
+                            Development</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> E-Commerce
+                            Solutions</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> CMS
+                            Integration</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-server text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IT Services</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive IT solutions to optimize your business operations,
+                        security, and technological infrastructure.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Cloud
+                            Solutions</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Network
+                            Security</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> 24/7
+                            Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8" id="footer">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img src="assets/img/green.png" alt="iPromind Media Logo" class="h-12">
+                        <div>
+                            <h3 class="text-xl font-bold">iPromind Media</h3>
+                            <p class="text-sm text-gray-400">ISO 9001:2015 Certified</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Transforming businesses through innovative digital solutions since
+                        2022.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/ipromindMedia1" target="_blank" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/ipromindmedia" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/ipromindmedia/" target="_blank" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/ipromindmedia/" target="_blank" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Digital Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">E-Commerce Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">IT Consulting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cloud Services</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Our Work</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest digital trends and
+                        insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="px-4 py-3 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 iPromind Media. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-blue-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Typed.js for heading
+            const typedHeading = new Typed('#typed-heading', {
+                strings: ['Transform Your <span class="text-blue-400">Digital Presence</span>'],
+                typeSpeed: 50,
+                showCursor: true,
+                cursorChar: '<span class="typed-cursor">|</span>',
+                onComplete: function() {
+                    // Start subheading after heading completes
+                    setTimeout(() => {
+                        typedSubheading.start();
+                    }, 500);
+                }
+            });
+
+            // Initialize Typed.js for subheading
+            const typedSubheading = new Typed('#typed-subheading', {
+                strings: ['We don\'t just dream about success - we engineer it with data-driven strategies and cutting-edge technology.'],
+                typeSpeed: 30,
+                startDelay: 0,
+                showCursor: true,
+                cursorChar: '<span class="typed-cursor">|</span>'
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Form submission handler with AJAX
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+
+                    // Show loading state and disable button
+                    submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ml-2"></i>';
+                    submitButton.disabled = true;
+
+                    // Clear previous messages
+                    formMessage.innerHTML = '';
+
+                    try {
+                        const formData = new FormData(this);
+                        const response = await fetch('submit_contact.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        // Handle non-JSON responses
+                        const contentType = response.headers.get('content-type');
+                        if (!contentType || !contentType.includes('application/json')) {
+                            throw new Error('Invalid server response');
+                        }
+
+                        const result = await response.json();
+
+                        if (result.status === 'success') {
+                            formMessage.innerHTML = `<p class="text-green-500 font-medium">${result.message}</p>`;
+                            contactForm.reset(); // Clear the form
+                        } else {
+                            formMessage.innerHTML = `<p class="text-red-500 font-medium">${result.message}</p>`;
+                        }
+                    } catch (error) {
+                        console.error('Submission error:', error);
+                        formMessage.innerHTML = `<p class="text-red-500 font-medium">Network error. Please try again later.</p>`;
+                    } finally {
+                        // Reset button state after 1s delay to prevent rapid clicks
+                        setTimeout(() => {
+                            submitButton.innerHTML = originalButtonText;
+                            submitButton.disabled = false;
+                        }, 1000);
+
+                        // Auto-clear message after 5 seconds
+                        setTimeout(() => {
+                            formMessage.innerHTML = '';
+                        }, 5000);
+                    }
+                });
+            }
+
+        });
+    </script>
+</body>
+
+</html>
