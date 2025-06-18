@@ -294,8 +294,12 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row">
                 <div class="lg:w-1/2 mt-12 ">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">Let's transform ideas <br> into
-                        success</h2>
+                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span id="typed-contact-heading" class="inline"></span>
+                    </h3>
+
+
+                    <!--  -->
 
                     <form id="contactForm" class="bg-gray-800 p-8 rounded-xl shadow-md" action="submit_contact.php"
                         method="POST">
@@ -348,7 +352,7 @@
                         <div id="formMessage" class="mt-4 text-center min-h-[24px]"></div>
                     </form>
                 </div>
-                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 pl-6  mt-12">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12 pl-6  mt-24">
                     <span class="text-blue-400 font-semibold">CONTACT US</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">Let's Build Something Great</h2>
                     <p class="text-blue-200 mb-8">Have a project in mind or questions about our services? Fill out the
@@ -405,6 +409,8 @@
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
                         <span id="typed-heading" class="block"></span>
                     </h1>
+
+                    <!-- <h1 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-6">Let's Transform Ideas <br> Into Success</h1> -->
                     <p class="text-xl mb-8 text-blue-200">
                         <span id="typed-subheading"></span>
                     </p>
@@ -610,6 +616,14 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
+            const typedContactHeading = new Typed('#typed-contact-heading', {
+                strings: ['Get In <span class="text-blue-400">Touch</span>'],
+                typeSpeed: 40,
+                showCursor: true,
+                cursorChar: '<span class="typed-cursor">|</span>'
+            });
+
             // Initialize Typed.js for heading
             const typedHeading = new Typed('#typed-heading', {
                 strings: ['Transform Your <span class="text-blue-400">Digital Presence</span>'],
